@@ -1,0 +1,11 @@
+[09-Jan-2017 14:47:01 America/Santiago] PHP Notice:  Undefined variable: kPathUrl in /home/cetepcl/public_html/ws/informe/informes/html2pdf/_class/tcpdfConfig.php on line 80
+[09-Jan-2017 15:24:53 America/Santiago] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b>../../contenido/templates/defecto/imagenes/logoDocumentos.jpg</b>
+  thrown in /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php on line 1319
+[09-Jan-2017 15:27:57 America/Santiago] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b>templates/defecto/imagenes/logoDocumentos.jpg</b>
+  thrown in /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php on line 1319
+[09-Jan-2017 15:29:21 America/Santiago] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b>../templates/defecto/imagenes/logoDocumentos.jpg</b>
+  thrown in /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php on line 1319
+[09-Jan-2017 15:30:38 America/Santiago] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b>../../templates/defecto/imagenes/logoDocumentos.jpg</b>
+  thrown in /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php on line 1319
+[09-Jan-2017 15:33:05 America/Santiago] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERROR n°6</span><br>Fichero : /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php<br>Línea : 1319<br><br>Imposible cargar la imagen <b>../../contenido/templates/defecto/imagenes/firmas/59.jpg</b>
+  thrown in /home/cetepcl/public_html/ws/informe/informes/html2pdf/html2pdf.class.php on line 1319

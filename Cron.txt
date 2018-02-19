@@ -1,0 +1,2 @@
+Remover archivos:   find public_html/ws/agenda/ws/colmena/informes/informes/* -mtime +7 -exec rm {} \
+Enviar informes: 	bin/informes_colmena.sh

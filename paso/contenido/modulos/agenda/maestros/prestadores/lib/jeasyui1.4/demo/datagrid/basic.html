@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic DataGrid - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Basic DataGrid</h2>
+	<p>The DataGrid is created from markup, no JavaScript code needed.</p>
+	<div style="margin:20px 0;"></div>
+	
+	<table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px"
+			data-options="singleSelect:true,collapsible:true,url:'get_users.php',method:'get'">
+		<thead>
+			<tr>
+				<th data-options="field:'id',width:80">Item ID</th>
+				<th data-options="field:'nombres',width:100">Product</th>
+				<th data-options="field:'apellidoPaterno',width:80,align:'right'">Apellido Paterno</th>
+				<th data-options="field:'apellidoMaterno',width:80,align:'right'">Apellido Materno</th>
+				<th data-options="field:'celular',width:250">Celular</th>
+				<th data-options="field:'especialidad',width:60,align:'center'">Especialidad</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>

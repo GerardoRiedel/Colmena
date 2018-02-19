@@ -1,0 +1,544 @@
+body {
+	font-size:11px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #FFF;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+
+.borde_tabla td
+{
+	border: #ccc;
+	border-collapse:collapse;
+	border-style:solid;
+	border-width: 1px;
+}
+
+.letra1{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FFFFFF;
+}
+.letra2{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.letra3 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color:#000099;
+	font-weight: bold;
+}
+.letra4 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#000099;
+	font-weight: bolder;
+}
+.letra5{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #666;
+	font-weight: bold;
+}
+.letra6{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+.letra7{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3A3A3A;
+}
+.letraDocumentoTitulo
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	font-weight:bolder;
+}
+.letraDocumentoTituloRojo
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color:#FF0000;
+	font-weight:bolder;
+}
+.letraDocumento
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+}
+#statusOk
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000;
+	background:#093;
+	color:#FFF;
+	width:130px;
+}
+#statusError
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000;
+	background:#F00;
+	color:#FFF;
+	width:180px;
+}
+.tablaRoja{
+	background-color:#FF5E5E;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;	
+}
+.tablaVerde{
+	background-color:#AFA;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;	
+}
+.tituloTablas {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#003895;
+	font-weight: bold;
+	background-color: #e9f7fc;
+	text-align: center;
+}
+.tablaAyuda {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color:#004080;
+	background-color:#F2F2FF;
+	text-align: left;
+}
+.borde_tabla2 {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+	border-top-color: #666666;
+	border-right-color: #666666;
+	border-bottom-color: #666666;
+	border-left-color: #666666;
+}
+
+input.boton
+{
+   font-size:12px;
+   font-family:Verdana,sans-serif;
+   width:120px;
+   height:24px;
+   background-color:#EEEEEE;
+   border-style:solid;
+   border-color:#777777;
+   border-width:1px;
+}
+
+input.botonNormal
+{
+   font-size:12px;
+   font-family:Verdana,sans-serif;
+   background-color:#EEEEEE;
+   border-style:solid;
+   border-color:#777777;
+   border-width:1px;
+}
+
+input.botonTablaHoras
+{
+	background-color: #FFFFFF;
+	border:thin #CCC;
+	width:30px;
+	text-align: center;
+	font-family: verdana;
+}
+
+.inputNumerico
+{
+	text-align: right;
+}
+
+.check {
+	text-align: center;
+	width: 120px;
+	height: 18px;
+	text-align: center;
+}
+.letraTablaHoras{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+.titulo
+{
+	font-family: "Trebuchet MS", Tahoma, Verdana;
+	color:#FFFFFF;
+	font-size:24px;
+	font-weight:bolder;
+}
+.titulo2
+{
+	font-family:Geneva, Arial, Helvetica, sans-serif;
+	color:#000066;
+	font-size:24px;
+	font-weight:bolder;
+}
+.tituloDocumento
+{
+	font-family:"Trebuchet MS", Tahoma, Verdana;
+	color:#000000;
+	font-size:16px;
+	font-weight:bolder;
+}
+.titulo3
+{
+	font-family:"Trebuchet MS", Tahoma, Verdana;
+	color:#000066;
+	font-size:16px;
+	font-weight:bolder;
+}
+table#cambio_color tr:hover 
+{
+	background-color:#F4F4FF;
+}
+
+#topPaciente
+{
+	position: fixed;
+	left: 0%; 
+	top: 0px;
+	width:100%;
+}
+#topMensajeAutoguardado
+{
+	position: fixed;
+	right: 0px; 
+	top: 0px;
+	width:100%;
+}
+
+.bordeTabla1
+{
+	border: solid thin #C5C5C5;
+	background:#FFF;
+}
+#log_res {
+	height:auto;
+	padding:15px;
+	width:100px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+	width:400px;
+}
+#log_res p {
+	margin:0;
+	padding:4px 0 4px 0;
+}
+.error {
+	color:red;
+	margin:0;
+	padding:0;
+}
+.titulo_grid
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#000099;
+	font-weight: bold;
+}
+.fondo_grid1
+{
+	background-color:#D7E8FF;
+}
+.fondo_grid1:hover
+{
+	background-color:#d9e7fa;
+	cursor:pointer;
+}
+.fondo_grid2
+{
+	background-color:#eff6ff;
+}
+.fondo_grid2:hover
+{
+	background-color:#d9e7fa;
+	cursor:pointer;
+}
+.fondo_grid1_normal
+{
+	background-color:#FFFFFF;
+}
+.fondo_grid2_normal
+{
+	background-color:#eff6ff;
+}
+.fondo_grid3
+{
+	background-color:#F2F2F2;
+}
+.fondo_grid4
+{
+	background-color:#EEEEEE;
+}
+.fondo_grid5
+{
+	border: thin solid #C8C8C8;
+}
+.fondo_tr_1
+{
+	background-color:#eff6ff;
+}
+.fondo_tr_1:hover
+{
+	background-color:#d9e7fa;
+	cursor:pointer;
+}
+
+.fondoTablaIzquierdaHoras
+{
+	background:url(imagenes/fondo.png) repeat-x #f0faff;
+}
+
+.tabla_mensajes
+{
+	border-color:#FFFFFF;
+	border-spacing:2px;
+	border-style:solid;
+	border-width:medium;
+	background-color:#6D9105;
+}
+
+#demoIzq, #demoDer { width:496px; height:30px; background-color:#D7E8FF; text-align:center; }
+
+#demoDer { float:center; position:relative; }
+
+#lista
+{
+	position:center;
+	font-size:12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-color:#EAEAEA; color:#000000;
+	border:1px dotted; border-color:#000000;
+	z-index:1;
+	top:25px;
+	left:76px;
+	display:none;
+}
+
+.resaltado
+{
+	background-color:#FFFFFF; color:#000000;
+	cursor:pointer;
+}
+
+.normal
+{
+	background-color:#EAEAEA; color:#000000;
+}
+.informeTituloModulo {
+	font-family:"Trebuchet MS", Tahoma, Verdana;
+	color:#000;
+	font-size:16px;
+	font-weight:bolder;
+	text-decoration:underline;
+}
+.informeTituloCampo {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1.3em;
+	color: #006;
+	font-weight:normal;
+}
+.informeTituloSeccion {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 0.8em;
+	color: #006;
+	font-weight:bold;
+}
+.informeTituloTabla {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 13px;
+	color: #006;
+	font-weight:bold;
+	background-color: #E2E1FF;
+}
+.informeBordeTabla td
+{
+	border: 1px solid #CCC;
+	background:#FFF;
+}
+.campoTitulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #00009B;
+	padding: 0 10 0 10;
+}
+.campoTituloTabla {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 13px;
+	color: #006;
+	font-weight:bold;
+	background-color: #E2E1FF;
+	text-align: center;
+}
+.campoSubTitulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #00009B;
+	padding: 0 10 0 10;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.campoTotal {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #00009B;
+	padding: 0 10 0 10;
+	font-weight: bold;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #000;
+}
+
+
+/**********************************/
+/*AUTOCOMPLETAR*/
+
+	/* START CSS NEEDED ONLY IN DEMO */	
+	#mainContainer{
+		width:660px;
+		margin:0 auto;
+		text-align:left;
+		height:100%;
+		background-color:#FFF;
+		border-left:3px double #000;
+		border-right:3px double #000;
+	}
+	#formContent{
+		padding:5px;
+	}
+	/* END CSS ONLY NEEDED IN DEMO */
+	
+	
+	/* Big box with list of options */
+	#ajax_listOfOptions{
+		position:absolute;	/* Never change this one */
+		width:175px;	/* Width of box */
+		height:250px;	/* Height of box */
+		overflow:auto;	/* Scrolling features */
+		border:1px solid #317082;	/* Dark green border */
+		background-color:#FFF;	/* White background color */
+		text-align:left;
+		font-size:12;
+		z-index:100;
+	}
+	#ajax_listOfOptionsGrande{
+		position:absolute;	/* Never change this one */
+		width:500px;	/* Width of box */
+		height:250px;	/* Height of box */
+		overflow:auto;	/* Scrolling features */
+		border:1px solid #317082;	/* Dark green border */
+		background-color:#FFF;	/* White background color */
+		text-align:left;
+		font-size:12;
+		z-index:100;
+	}
+	#ajax_listOfOptions div{	/* General rule for both .optionDiv and .optionDivSelected */
+		margin:1px;		
+		padding:1px;
+		cursor:pointer;
+		font-size:14;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	#ajax_listOfOptionsGrande div{	/* General rule for both .optionDiv and .optionDivSelected */
+		margin:1px;		
+		padding:1px;
+		cursor:pointer;
+		font-size:14;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	#ajax_listOfOptions .optionDiv{	/* Div for each item in list */
+		
+	}
+	#ajax_listOfOptionsGrande .optionDiv{	/* Div for each item in list */
+		
+	}
+	#ajax_listOfOptions .optionDivSelected{ /* Selected item in the list */
+		background-color:#317082;
+		color:#FFF;
+	}
+	#ajax_listOfOptionsGrande .optionDivSelected{ /* Selected item in the list */
+		background-color:#317082;
+		color:#FFF;
+	}
+	#ajax_listOfOptions_iframe{
+		background-color:#F00;
+		position:absolute;
+		z-index:5;
+	}
+	#ajax_listOfOptionsGrande_iframe{
+		background-color:#F00;
+		position:absolute;
+		z-index:5;
+	}
+	
+	form{
+		display:inline;
+	}
+
+/*FIN AUTOCOMPLETAR*/
+/**********************************/
+.correctorTitulo1 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color: #1e42fb;
+	font-weight: bold;
+}
+/*genera pdf*/
+
+#carga {
+	background-image:url(img/shade1x1.png);    
+	position:absolute; 
+	left:0; 
+	top:0;
+	width:100%; 
+	z-index:100;
+	}
+
+#cargando{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 300px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -150px;
+	
+	overflow: auto;
+	}
+	
+/*fin genera pdf*/	

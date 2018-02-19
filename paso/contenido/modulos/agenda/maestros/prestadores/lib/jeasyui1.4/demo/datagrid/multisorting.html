@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Multiple Sorting - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Multiple Sorting</h2>
+	<p>Set 'multiSort' property to true to enable multiple column sorting.</p>
+	<div style="margin:20px 0;"></div>
+	
+	<table class="easyui-datagrid" title="Multiple Sorting" style="width:700px;height:250px"
+			data-options="singleSelect:true,collapsible:true,
+				url:'get_users.php',
+				method:'get',
+				remoteSort:false,
+				multiSort:true
+			">
+		<thead>
+			<tr>
+				<th data-options="field:'id',width:80">ID</th>
+				<th data-options="field:'nombres',width:100">Nombres</th>
+				<th data-options="field:'apellidoPaterno',width:80,align:'right'">Apellido Paterno</th>
+				<th data-options="field:'apellidoMaterno',width:80,align:'right'">Apellido Materno</th>
+				<th data-options="field:'celular',width:250">Celular</th>
+				<th data-options="field:'especialidad',width:60,align:'center'">Especialidad</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>
