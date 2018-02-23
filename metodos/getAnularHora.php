@@ -57,8 +57,8 @@ $s = "INSERT INTO cetepcl_agenda.logColmena (logQuery,logUsuario,logDate,logProc
             echo '{"anularHora": ' . json_encode(array('error'=>400)) . '}';
             die();
         }
-        
-        $sql3 = "SELECT hora,ciudad,prestador FROM cetepcl_agenda.horas_prestadores WHERE id=$idHora  " ;
+
+        $sql3 = "SELECT p.hora,p.ciudad,p.prestador,c.ciudad as nomCiudad,d.nombres,d.apellidoPaterno FROM cetepcl_agenda.horas_prestadores p JOIN cetepcl_agenda.ciudades c ON (c.id=p.ciudad)JOIN cetepcl_agenda.prestadores d ON (d.id=p.prestador) WHERE p.id=$idHora  " ;
         $stmt = $db->prepare($sql3);
         $stmt->execute();
         $lista = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -74,6 +74,8 @@ $s = "INSERT INTO cetepcl_agenda.logColmena (logQuery,logUsuario,logDate,logProc
         
         $prestador = $lista[0]->prestador;
         $ciudad = $lista[0]->ciudad;
+        $nomCiudad = $lista[0]->nomCiudad;
+        $nomPrestador = $lista[0]->nombres.' '.$lista[0]->apellidoPaterno;
         $hora = $lista[0]->hora;
         
         $sql = "SELECT id,paciente,numeroLicenciaCheck,numerolicencia,urlExpedienteColmena FROM cetepcl_agenda.horas WHERE hora='$hora' AND prestador = $prestador AND ciudad = $ciudad AND paciente != 'null' and isapre='4' " ;
@@ -186,9 +188,7 @@ $s = "INSERT INTO cetepcl_agenda.logColmena (logQuery,logUsuario,logDate,logProc
                         $estado='sin proceso';
                     }
                     
-                    IF($ciudad==='1')$ciudad='Santiago';ELSEIF($ciudad==='3')$ciudad='Iquique';ELSEIF($ciudad==='6')$ciudad='Arica';ELSEIF($ciudad==='7')$ciudad='Antofagasta';ELSEIF($ciudad==='8')$ciudad='Talca';ELSEIF($ciudad==='13')$ciudad='Temuco';ELSEIF($ciudad==='14')$ciudad='Valdivia';ELSEIF($ciudad==='15')$ciudad='Osorno';ELSEIF($ciudad==='17')$ciudad='Punta Arenas';ELSEIF($ciudad==='18')$ciudad='La Serena';ELSEIF($ciudad==='22')$ciudad='Castro';ELSEIF($ciudad==='23')$ciudad='Los Angeles';ELSEIF($ciudad==='24')$ciudad='Chillan';ELSEIF($ciudad==='29')$ciudad='Santiago MirAndes';ELSEIF($ciudad==='45')$ciudad='Concepción';ELSEIF($ciudad==='59')$ciudad='Vina Villanelo';ELSEIF($ciudad==='60')$ciudad='Puerto Montt Centro';ELSEIF($ciudad==='61')$ciudad='Copiapo Palomar';ELSEIF($ciudad==='72')$ciudad='Rancagua Alameda';
-
-                    $mensaje = "Se ha anulado un agendamiento desde Colmena, con una diferencia de ".$difDias." días hábiles.<br>Quedando la hora<b>, ".$estado."</b>.<br>ID: ".$id.".<br>HORA: ".$hora.".<br>CIUDAD: ".$ciudad.".<br>PRESTADOR: ".$prestador.".<br>PACIENTE: ".$paciente.".<br><br>Cetep";
+                    $mensaje = "Se ha anulado un agendamiento desde Colmena, con una diferencia de ".$difDias." días hábiles.<br>Quedando la hora<b>, ".$estado."</b>.<br>ID: ".$id.".<br>HORA: ".$hora.".<br>CIUDAD: ".$nomCiudad.".<br>PRESTADOR: ".$nomPrestador.".<br>PACIENTE: ".$paciente.".<br><br>Cetep";
                     $destinatario = "dtoro@cetep.cl";
                     $asunto = 'ANULACION DESDE COLMENA';
                     $headers = "MIME-Version: 1.0\r\n"; 

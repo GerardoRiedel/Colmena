@@ -229,9 +229,9 @@ $informesEnviados = '';
                                         }
 
                         }
-                        ELSEIF($check[0]->fecha <= $fechaPublicacion){
+                        ELSEIF($check[0]->fecha < $fechaPublicacion){
                             
-                            $mensaje = 'Estimadas,<br><br>Informe diario de peritajes no publicados con mas de 5 días:<br><br>Ciudad: '.$ciudad.'<br>Prestador: '.strtoupper($check[0]->nomMedico).' '.strtoupper($check[0]->apeMedico).'<br>Paciente: '.strtoupper($check[0]->nomPac).' '.strtoupper($check[0]->apePac).'<br>Hora: '.$hora;
+                            $mensaje = 'Estimadas,<br><br>Informe diario de peritajes no publicados en 5 días:<br><br>Ciudad: '.$ciudad.'<br>Prestador: '.strtoupper($check[0]->nomMedico).' '.strtoupper($check[0]->apeMedico).'<br>Paciente: '.strtoupper($check[0]->nomPac).' '.strtoupper($check[0]->apePac).'<br>Hora: '.$hora;
                             $destinatario= 'griedel@cetep.cl';
                             $asunto = 'Informes sin publicar Colmena';
                             $headers = "MIME-Version: 1.0\r\n"; 
