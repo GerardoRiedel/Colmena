@@ -48,7 +48,7 @@ IF(!empty($row)){
     
         $idHoraPrestador = $row['idHoraPrestador'];
         $urlColmena  = $row['urlExpedienteColmena'];
-        $idHoraVieja = $row['id'];
+        $idHoraVieja = $row['idHoraPrestador'];
         $prestador   = $row['prestador'];
         $ciudad      = $row['ciudad'];
         $hora        = $row['hora'];
