@@ -72,7 +72,7 @@ IF($enviar === 'si'){
 
  
 ////////ENVIA INFORME MENSUAL DE HORAS RESERVADAS SIN AGENDAR///////////
-IF(date('d')==='1' && date('H')<'9'){
+IF((date('d')==='1' || date('d')==='2') && date('H')<'9'){
     $primerDia = date('Y-m-d 00:00:00', strtotime('first day of -1 month'));
     $ultimoDia = date('Y-m-d 00:00:00', strtotime('last day of -1 month'));
     $mes = date('F', strtotime('-1 month'));
