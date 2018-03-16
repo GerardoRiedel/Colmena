@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 
 require 'db.php'; 
 $db = getConnection();
@@ -67,10 +68,73 @@ IF($enviar === 'si'){
     $mj='envio de horas sin agendar exitoso';
 }else $mj='sin horas sin agendar para enviar';
         
-return $mj;
 
-die;  
+
+ 
+////////ENVIA INFORME MENSUAL DE HORAS RESERVADAS SIN AGENDAR///////////
+IF(date('d')==='1' && date('H')<'9'){
+    $primerDia = date('Y-m-d 00:00:00', strtotime('first day of -1 month'));
+    $ultimoDia = date('Y-m-d 00:00:00', strtotime('last day of -1 month'));
+    $mes = date('F', strtotime('-1 month'));
+    
+$sql = "SELECT p.id,p.hora,p.ciudad,p.prestador,c.ciudad as nomCiudad FROM cetepcl_agenda.horas_prestadores p JOIN cetepcl_agenda.ciudades c ON (c.id=p.ciudad) WHERE p.hora>='$primerDia' and p.hora <='$ultimoDia'" ;
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$lista = $stmt->fetchAll(PDO::FETCH_OBJ);
+$correo2 = '';
+//die(var_dump($lista));
+      
+FOREACH($lista as $lis)  {
+    $horaPrestador = $lis->id;
+    $prestador = $lis->prestador;
+    $ciudad = $lis->ciudad;
+    $nomCiudad = $lis->nomCiudad;
+    $hora = $lis->hora;
+    
+    $sql = "SELECT id FROM cetepcl_agenda.horas WHERE hora='$hora' AND prestador = $prestador AND ciudad = $ciudad AND paciente != 'null'  " ;
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    $check = $stmt->fetchAll(PDO::FETCH_OBJ);
+    
+    IF(empty($check[0]->id)){
+        $sql = "SELECT id,isapre FROM cetepcl_agenda.isapres_hora WHERE hora=$horaPrestador" ;
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $dentro = $stmt->fetchAll(PDO::FETCH_OBJ);
         
+        FOREACH($dentro as $den){
+            $reservaColmena2 = $reservaIsa2 = 'no';
+            IF($den->isapre === '4'){
+                $reservaColmena2 = 'si';
+            }ELSE {
+                $reservaIsa2 = 'si';
+            }
+    
+            IF($reservaIsa2==='no' && $reservaColmena2==='si'){
+                $correo2 = $correo2.'<br>Ciudad: '.$nomCiudad.'<br>Hora: '.$hora.'<br>';
+            }
+        }
+    }
+}      
+    IF(empty($correo2))$correo2='Sin datos para enviar';
+    $mensaje = "Estimadas,<br><br>Junto con saludar, <br>Adjunto listado de horas reservadas sin agendar de Colmena durante el mes de ".$mes.".<br><br>".$correo2." <br><br>Cetep";
+    
+    //$destinatario = "gerardo.riedel.c@gmail.com";
+    $destinatario = "dtoro@cetep.cl,mgalvez@cetep.cl";
+    $asunto = 'Horas reservadas sin agendar';
+    $headers = "MIME-Version: 1.0\r\n"; 
+    $headers .= "Content-type: text/html; charset=utf-8\r\n"; 
+    $headers .= "From: Cetep <cetep@cetep.cl>\r\n"; //dirección del remitente 
+    $headers .= "bcc: griedel@cetep.cl";
+    mail($destinatario,$asunto,$mensaje,$headers) ;
+
+
+
+
+}
+   
+return $mj;
+die;
         
         
         
