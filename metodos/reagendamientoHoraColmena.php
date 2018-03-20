@@ -223,10 +223,10 @@ IF(!empty($row)){
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
             curl_setopt($ch, CURLOPT_HEADER, false);                                                                                                               
 
-            $result = curl_exec($ch);
+            $respuesta = curl_exec($ch);
 
-            
-            IF($result === '{"status":true,"glosa":"Peritaje reagendado correctamente"}' || $result === '{"status":true}' ) {
+            $result;
+            IF($respuesta === '{"status":true,"glosa":"Peritaje reagendado correctamente"}' || $respuesta === '{"status":true}' ) {
                 date_default_timezone_set('America/Santiago');
                 $date = date('Y-m-d H:i:s');
                 $logQuery = 'OK'.$data_string;
@@ -242,7 +242,7 @@ IF(!empty($row)){
               //      VALUES ('$logQuery ',161,'$date','ReAgendar')";
               //  mysqli_query($conectar,$s);
 
-                $msg = $result. "Se ha reagendado la hora; RESPUESTA====$result, PACIENTE = $idpaciente, HORA VIEJA = $idHoraVieja, CIUDAD = $ciudad, HORA = '$hora', PRESTADOR = $prestador, PACRUT = $pacRut, LCCIDN = $lccIdn, HORRUTMEDICO = $horRutMedico, HORNOMMEDICO = $horNomMedico, HORESPMEDICO = $horEspMedico, IORIDN = 3, COMUNA = $comuna, HORFECHA = $horFecha, HOREST = $horEst, HORDIRECCION = $horDireccion, HOREXTID = $idHoraVieja, HOREXTIDNUEVA = $HoraNUEVAId, DATA = $data, QUERY = $data_string";
+                $msg = $respuesta. "Se ha reagendado la hora; RESPUESTA====$respuesta, PACIENTE = $idpaciente, HORA VIEJA = $idHoraVieja, CIUDAD = $ciudad, HORA = '$hora', PRESTADOR = $prestador, PACRUT = $pacRut, LCCIDN = $lccIdn, HORRUTMEDICO = $horRutMedico, HORNOMMEDICO = $horNomMedico, HORESPMEDICO = $horEspMedico, IORIDN = 3, COMUNA = $comuna, HORFECHA = $horFecha, HOREST = $horEst, HORDIRECCION = $horDireccion, HOREXTID = $idHoraVieja, HOREXTIDNUEVA = $HoraNUEVAId, DATA = $data, QUERY = $data_string";
                 $msg = wordwrap($msg,70);
                 $est = 'ERROR';
                // mail("griedel@cetep.cl"," ERROR   REAGENDAMIENTO CETEP",$msg);

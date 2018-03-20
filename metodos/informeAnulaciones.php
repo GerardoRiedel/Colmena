@@ -119,8 +119,8 @@ FOREACH($lista as $lis)  {
     IF(empty($correo2))$correo2='Sin datos para enviar';
     $mensaje = "Estimadas,<br><br>Junto con saludar, <br>Adjunto listado de horas reservadas sin agendar de Colmena durante el mes de ".$mes.".<br><br>".$correo2." <br><br>Cetep";
     
-    //$destinatario = "gerardo.riedel.c@gmail.com";
-    $destinatario = "dtoro@cetep.cl,mgalvez@cetep.cl";
+    //$destinatario = "dtoro@cetep.cl,mgalvez@cetep.cl";
+    $destinatario = "gerardo.riedel.c@gmail.com";
     $asunto = 'Horas reservadas sin agendar';
     $headers = "MIME-Version: 1.0\r\n"; 
     $headers .= "Content-type: text/html; charset=utf-8\r\n"; 
