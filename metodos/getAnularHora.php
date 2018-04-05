@@ -189,7 +189,7 @@ $s = "INSERT INTO cetepcl_agenda.logColmena (logQuery,logUsuario,logDate,logProc
                     }
                     
                     $mensaje = "Se ha anulado un agendamiento desde Colmena, con una diferencia de ".$difDias." días hábiles.<br>Quedando la hora<b>, ".$estado."</b>.<br>ID: ".$id.".<br>HORA: ".$hora.".<br>CIUDAD: ".$nomCiudad.".<br>PRESTADOR: ".$nomPrestador.".<br>PACIENTE: ".$paciente.".<br><br>Cetep";
-                    $destinatario = "dtoro@cetep.cl";
+                    $destinatario = "dtoro@cetep.cl,cgomez@cetep.cl,earanis@cetep.cl";
                     $asunto = 'ANULACION DESDE COLMENA';
                     $headers = "MIME-Version: 1.0\r\n"; 
                     $headers .= "Content-type: text/html; charset=utf-8\r\n"; 

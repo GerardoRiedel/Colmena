@@ -210,8 +210,8 @@ IF ($_SESSION['estado'] != 1){
                     
                     
                     //echo '                 REPETICION: hora='.$hora.'-fecha='.$fecha.'-paciente='.$paciente.'-usuario='.$usuario.'-ciudad='.$ciudad.'-prestador='.$prestador.'-horId='.$horaId.'-url='.$expUrl.'-licencia='.$numeroLic.'....................................';
-                    $sql4 = "INSERT INTO horas (hora,fecha,isapre,paciente,usuario,ciudad,prestador,idHoraPrestador,urlExpedienteColmena,numerolicencia,comunaIne,finlicencia,numeroLicenciaCheck)
-                                    VALUES ($hora,$fecha,4,$paciente,$usuario,$ciudad,$prestador,$horaId,'$expUrl','$numeroLic',$comunaIne,'$finLicencia','$numeroLic')";
+                    $sql4 = "INSERT INTO horas (hora,fecha,isapre,paciente,usuario,ciudad,prestador,idHoraPrestador,urlExpedienteColmena,numerolicencia,comunaIne,finlicencia,numeroLicenciaCheck,confirmada)
+                                    VALUES ($hora,$fecha,4,$paciente,$usuario,$ciudad,$prestador,$horaId,'$expUrl','$numeroLic',$comunaIne,'$finLicencia','$numeroLic','')";
                     $stmt = $db->prepare($sql4);
                     $stmt->execute();
                 //echo $sql4;

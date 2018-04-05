@@ -62,7 +62,7 @@ IF($enviar === 'si'){
     $headers = "MIME-Version: 1.0\r\n"; 
     $headers .= "Content-type: text/html; charset=utf-8\r\n"; 
     $headers .= "From: Cetep <cetep@cetep.cl>\r\n"; //dirección del remitente 
-    $headers .= "cc: dtoro@cetep.cl\r\n";
+    $headers .= "cc: dtoro@cetep.cl,cgomez@cetep.cl,earanis@cetep.cl\r\n";
     $headers .= "bcc: griedel@cetep.cl";
     mail($destinatario,$asunto,$mensaje,$headers) ;
     $mj='envio de horas sin agendar exitoso';
@@ -72,7 +72,7 @@ IF($enviar === 'si'){
 
  
 ////////ENVIA INFORME MENSUAL DE HORAS RESERVADAS SIN AGENDAR///////////
-IF((date('d')==='1' || date('d')==='2') && date('H')<'9'){
+IF((date('d')==='01' || date('d')==='02')){
     $primerDia = date('Y-m-d 00:00:00', strtotime('first day of -1 month'));
     $ultimoDia = date('Y-m-d 00:00:00', strtotime('last day of -1 month'));
     $mes = date('F', strtotime('-1 month'));
@@ -81,7 +81,7 @@ $sql = "SELECT p.id,p.hora,p.ciudad,p.prestador,c.ciudad as nomCiudad FROM cetep
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $lista = $stmt->fetchAll(PDO::FETCH_OBJ);
-$correo2 = '';
+$correo2 = $correo3 = '';
 //die(var_dump($lista));
       
 FOREACH($lista as $lis)  {
@@ -114,13 +114,29 @@ FOREACH($lista as $lis)  {
                 $correo2 = $correo2.'<br>Ciudad: '.$nomCiudad.'<br>Hora: '.$hora.'<br>';
             }
         }
+        
+        FOREACH($dentro as $den){
+            $reservaCruzBlanca = $reservaIsa2 = 'no';
+            IF($den->isapre === '3'){
+                $reservaCruzBlanca = 'si';
+            }ELSE {
+                $reservaIsa2 = 'si';
+            }
+    
+            IF($reservaIsa2==='no' && $reservaCruzBlanca==='si'){
+                $correo3 = $correo3.'<br>Ciudad: '.$nomCiudad.'<br>Hora: '.$hora.'<br>';
+            }
+        }
+        
+        
     }
 }      
     IF(empty($correo2))$correo2='Sin datos para enviar';
-    $mensaje = "Estimadas,<br><br>Junto con saludar, <br>Adjunto listado de horas reservadas sin agendar de Colmena durante el mes de ".$mes.".<br><br>".$correo2." <br><br>Cetep";
+    IF(empty($correo3))$correo3='Sin datos para enviar';
+    $mensaje = "Estimadas,<br>Junto con saludar,<br><br>Adjunto listado de horas reservadas sin agendar de <b>Colmena</b> durante el mes de ".$mes.".<br><br>".$correo2."   <br><br><br> Adjunto listado de horas reservadas sin agendar de <b>Cruz Blanca</b> durante el mes de ".$mes.".<br><br>".$correo3."<br><br>Atte<br>Cetep";
     
-    //$destinatario = "dtoro@cetep.cl,mgalvez@cetep.cl";
-    $destinatario = "gerardo.riedel.c@gmail.com";
+    $destinatario = "dtoro@cetep.cl,mgalvez@cetep.cl,cgomez@cetep.cl,earanis@cetep.cl";
+    //$destinatario = "gerardo.riedel.c@gmail.com";
     $asunto = 'Horas reservadas sin agendar';
     $headers = "MIME-Version: 1.0\r\n"; 
     $headers .= "Content-type: text/html; charset=utf-8\r\n"; 
